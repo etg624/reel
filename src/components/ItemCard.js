@@ -1,7 +1,8 @@
 import React from 'react';
+import PauseButton from './PauseButton';
 
 function ItemCard(props) {
-  const { name, status, percentSaved, total, imageUrl } = props;
+  const { name, status, percentSaved, total, imageUrl, id } = props;
   return (
     <section className="item">
       <h3>{name}</h3>
@@ -19,6 +20,7 @@ function ItemCard(props) {
       >
         {status}
       </p>
+      <PauseButton status={status} itemId={id} />
     </section>
   );
 }

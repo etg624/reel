@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ItemCard from './ItemCard';
-import { filterSearch } from '../actions/search';
 
 class SearchableInventory extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filteredItems: this.props.inventoryItems,
       value: ''
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
@@ -15,28 +13,29 @@ class SearchableInventory extends Component {
 
   onChangeHandler(e) {
     this.setState({ value: e.target.value });
-    this.props.dispatch(filterSearch(e.target.value));
   }
   render() {
-    const filteredItems = this.state.filteredItems
+    const { value } = this.state;
+
+    const filteredItems = this.props.inventoryItems
       .filter(item => {
-        if (this.state.value.length > 0) {
-          return item.name.toLowerCase().includes(this.state.value);
+        if (value.length > 0) {
+          return item.name.toLowerCase().includes(value);
         } else {
           return item;
         }
       })
       .map(item => {
-        const { name, status, percentSaved, total, imageUrl } = item;
+        const { name, status, percentSaved, total, imageUrl, id } = item;
         return (
-          <li>
+          <li key={id}>
             <ItemCard
-              key={name}
               name={name}
               status={status}
               percentSaved={percentSaved}
               total={total}
               imageUrl={imageUrl}
+              id={id}
             />
           </li>
         );

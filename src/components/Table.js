@@ -1,9 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import SearchAbleInventory from './SearchableInventory';
 
-function Table(props) {
+function Table() {
   return (
     <div>
       <SearchAbleInventory />
@@ -11,8 +10,4 @@ function Table(props) {
   );
 }
 
-const mapStateToProps = state => ({
-  inventoryItems: state.tableReducer.inventoryItems
-});
-
-export default connect(mapStateToProps)(Table);
+export default Table;
