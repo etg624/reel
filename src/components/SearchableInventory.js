@@ -54,8 +54,8 @@ class SearchableInventory extends Component {
   }
 }
 
-const mapStateToProps = ({ tableReducer }) => ({
-  inventoryItems: tableReducer.inventoryItems
+const mapStateToProps = ({ inventoryReducer }) => ({
+  inventoryItems: inventoryReducer.inventoryItems
 });
 
 export default connect(mapStateToProps)(SearchableInventory);

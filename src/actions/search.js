@@ -1,5 +1,5 @@
-export const FILTER_SEARCH = 'FILTER_SEARCH';
-export const filterSearch = value => ({
-  type: FILTER_SEARCH,
+export const SEARCH = 'SEARCH';
+export const search = value => ({
+  type: SEARCH,
   value
 });

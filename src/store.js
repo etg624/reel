@@ -1,10 +1,10 @@
 import { createStore, compose, combineReducers } from 'redux';
-import { tableReducer } from './reducers/tableReducer';
+import { inventoryReducer } from './reducers/inventoryReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   combineReducers({
-    tableReducer
+    inventoryReducer
   }),
   composeEnhancers()
 );

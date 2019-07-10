@@ -40,7 +40,7 @@ const initialState = {
   ]
 };
 
-export function tableReducer(state = initialState, action) {
+export function inventoryReducer(state = initialState, action) {
   switch (action.type) {
     case TOGGLE_STATUS:
       return {
