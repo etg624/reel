@@ -1,4 +1,4 @@
-// import { FILTER_SEARCH } from '../actions/search';
+import { SEARCH } from '../actions/search';
 import { TOGGLE_STATUS } from '../actions/toggleStatus';
 const initialState = {
   inventoryItems: [
@@ -37,7 +37,8 @@ const initialState = {
       total: '200',
       imageUrl: 'https://is4.revolveassets.com/images/p4/n/z/OFFF-MS76_V1.jpg'
     }
-  ]
+  ],
+  searchVal: ''
 };
 
 export function inventoryReducer(state = initialState, action) {
@@ -54,6 +55,11 @@ export function inventoryReducer(state = initialState, action) {
             status: action.status === 'active' ? 'paused' : 'active'
           };
         })
+      };
+    case SEARCH:
+      return {
+        ...state,
+        searchVal: action.value
       };
     default:
       return state;

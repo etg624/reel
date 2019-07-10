@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ItemCard from './ItemCard';
+import { search } from '../actions/search';
 
 class SearchableInventory extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ''
-    };
     this.onChangeHandler = this.onChangeHandler.bind(this);
   }
 
   onChangeHandler(e) {
+    this.props.dispatch(search(e.target.value));
     this.setState({ value: e.target.value });
   }
   render() {
-    const { value } = this.state;
+    const { searchVal, inventoryItems } = this.props;
 
-    const filteredItems = this.props.inventoryItems
+    const filteredItems = inventoryItems
       .filter(item => {
-        if (value.length > 0) {
-          return item.name.toLowerCase().includes(value);
+        if (searchVal) {
+          return item.name.toLowerCase().includes(searchVal);
         } else {
           return item;
         }
@@ -44,7 +43,7 @@ class SearchableInventory extends Component {
       <div>
         <input
           type="text"
-          value={this.state.value}
+          value={searchVal}
           onChange={this.onChangeHandler}
           placeholder="Search for item..."
         />
@@ -55,7 +54,8 @@ class SearchableInventory extends Component {
 }
 
 const mapStateToProps = ({ inventoryReducer }) => ({
-  inventoryItems: inventoryReducer.inventoryItems
+  inventoryItems: inventoryReducer.inventoryItems,
+  searchVal: inventoryReducer.searchVal
 });
 
 export default connect(mapStateToProps)(SearchableInventory);
