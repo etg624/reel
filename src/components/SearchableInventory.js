@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ItemCard from './ItemCard';
-import { search } from '../actions/search';
+import { search } from '../actions';
 
 class SearchableInventory extends Component {
   constructor(props) {
     super(props);
+
     this.onChangeHandler = this.onChangeHandler.bind(this);
   }
 
   onChangeHandler(e) {
     this.props.dispatch(search(e.target.value));
-    this.setState({ value: e.target.value });
   }
   render() {
     const { searchVal, inventoryItems } = this.props;
@@ -47,7 +47,13 @@ class SearchableInventory extends Component {
           onChange={this.onChangeHandler}
           placeholder="Search for item..."
         />
-        <ul>{filteredItems}</ul>
+        <ul>
+          {filteredItems.length ? (
+            filteredItems
+          ) : (
+            <div>No Items Match that search</div>
+          )}
+        </ul>
       </div>
     );
   }

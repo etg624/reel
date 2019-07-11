@@ -1,5 +1,4 @@
-import { SEARCH } from '../actions/search';
-import { TOGGLE_STATUS } from '../actions/toggleStatus';
+import { TOGGLE_STATUS, SEARCH } from '../actions';
 const initialState = {
   inventoryItems: [
     {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { toggleStatus } from '../actions/toggleStatus';
+import { toggleStatus } from '../actions';
 import { connect } from 'react-redux';
 
 function PauseButton(props) {
