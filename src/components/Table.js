@@ -4,9 +4,9 @@ import SearchAbleInventory from './SearchableInventory';
 
 function Table() {
   return (
-    <table>
+    <div>
       <SearchAbleInventory />
-    </table>
+    </div>
   );
 }
 

@@ -1,0 +1,11 @@
+.item-container {
+  margin: 0 auto;
+  width: 50%;
+}
+.item-image {
+  width: 30%;
+  height: 30%;
+}
+.item-image img {
+  width: 100%;
+}

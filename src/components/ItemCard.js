@@ -1,14 +1,17 @@
 import React from 'react';
 import PauseButton from './PauseButton';
+import '../styles/itemCard.css';
 
 function ItemCard(props) {
   const { name, status, percentSaved, total, imageUrl, id } = props;
   return (
-    <section className="item">
-      <h3>{name}</h3>
-      <div>
-        <img src={imageUrl} alt={name} />
-      </div>
+    <main className="item-container">
+      <section>
+        <h3>{name}</h3>
+        <div className="item-image">
+          <img src={imageUrl} alt={name} />
+        </div>
+      </section>
       <progress value={percentSaved} max="100" />
       <p>Total: ${total}</p>
       <p
@@ -21,7 +24,7 @@ function ItemCard(props) {
         {status}
       </p>
       <PauseButton status={status} itemId={id} />
-    </section>
+    </main>
   );
 }
 
