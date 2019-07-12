@@ -1,0 +1,38 @@
+.pause-button {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+.pause-button::after,
+.pause-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #000;
+  transition: transform 0.2s;
+}
+
+.pause-button::after {
+  transform: translate(3px, 3px);
+}
+
+.pause-button::before {
+  transform: translate(-3px, -3px);
+}
+
+.pause-button:hover::after,
+.pause-button:hover::before {
+  transform: translate(0px);
+}
+
+.pause-button:active {
+  transform: translateY(4px);
+}

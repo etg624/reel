@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ItemCard from './ItemCard';
 import { search } from '../actions';
+import SortBy from './SortBy';
+import '../styles/SearchableInventory.css';
 
 class SearchableInventory extends Component {
   constructor(props) {
@@ -19,7 +21,7 @@ class SearchableInventory extends Component {
     const filteredItems = inventoryItems
       .filter(item => {
         if (searchVal) {
-          return item.name.toLowerCase().includes(searchVal);
+          return item.name.toLowerCase().includes(searchVal.toLowerCase());
         } else {
           return item;
         }
@@ -40,21 +42,34 @@ class SearchableInventory extends Component {
         );
       });
     return (
-      <div>
+      <section className="page-content">
         <input
+          className="search"
           type="text"
           value={searchVal}
           onChange={this.onChangeHandler}
-          placeholder="Search for item..."
+          placeholder="Search for an item..."
         />
-        <ul>
-          {filteredItems.length ? (
-            filteredItems
-          ) : (
-            <div>No Items Match that search</div>
-          )}
-        </ul>
-      </div>
+        <section className="reels">
+          <header className="reels-header">
+            <h1>Your Reels!</h1>
+            <SortBy />
+          </header>
+
+          <ul>
+            {filteredItems.length ? (
+              filteredItems
+            ) : (
+              <div className="no-item">
+                No Items Match that search{' '}
+                <span role="img" aria-label="detective">
+                  🕵️‍♂️
+                </span>
+              </div>
+            )}
+          </ul>
+        </section>
+      </section>
     );
   }
 }
