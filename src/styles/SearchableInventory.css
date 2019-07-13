@@ -29,6 +29,7 @@
 }
 
 .reels-header {
+  display: flex;
   margin: 0 0 25px 0px;
   border-bottom: 1px solid black;
 }

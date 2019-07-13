@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/ProgressBar.css';
 
 function ProgressBar(props) {
-  console.log(props);
   const { fill } = props;
   const color =
     fill > 75

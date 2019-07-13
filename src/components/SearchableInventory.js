@@ -8,7 +8,6 @@ import '../styles/SearchableInventory.css';
 class SearchableInventory extends Component {
   constructor(props) {
     super(props);
-
     this.onChangeHandler = this.onChangeHandler.bind(this);
   }
 
@@ -53,7 +52,7 @@ class SearchableInventory extends Component {
         <section className="reels">
           <header className="reels-header">
             <h1>Your Reels!</h1>
-            <SortBy />
+            <SortBy sortValues={{ ...this.props }} />
           </header>
 
           <ul>

@@ -1,0 +1,14 @@
+.sort-buttons input[type='radio'] {
+  margin-right: 15px;
+}
+
+.sort-buttons label {
+  margin-right: 4px;
+}
+
+.sort-container {
+  display: flex;
+  width: 50%;
+  margin-left: auto;
+  justify-content: space-around;
+}

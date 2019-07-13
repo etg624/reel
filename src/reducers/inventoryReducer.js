@@ -1,4 +1,4 @@
-import { TOGGLE_STATUS, SEARCH } from '../actions';
+import { TOGGLE_STATUS, SEARCH, SORT_BY } from '../actions';
 const initialState = {
   inventoryItems: [
     {
@@ -6,7 +6,7 @@ const initialState = {
       name: 'Rolex Watch',
       status: 'active',
       percentSaved: '30',
-      total: '35000',
+      total: 35000,
       imageUrl:
         'https://images.rolex.com/2019/catalogue/images/upright-bba-with-shadow/m116503-0004.png?impolicy=upright-grid-card&imwidth=585'
     },
@@ -15,7 +15,7 @@ const initialState = {
       name: 'Gucci Belt',
       status: 'paused',
       percentSaved: '90',
-      total: '400',
+      total: 400,
       imageUrl:
         'https://cache.net-a-porter.com/images/products/741153/741153_in_pp.jpg'
     },
@@ -24,7 +24,7 @@ const initialState = {
       name: 'Versace Shirt',
       status: 'active',
       percentSaved: '40',
-      total: '412',
+      total: 412,
       imageUrl:
         'https://image.shopittome.com/apparel_images/fb/versace-versace-shirt-abvba097ce8_zoom.jpg'
     },
@@ -33,7 +33,7 @@ const initialState = {
       name: 'Off-White Shirt',
       status: 'paused',
       percentSaved: '90',
-      total: '200',
+      total: 200,
       imageUrl: 'https://is4.revolveassets.com/images/p4/n/z/OFFF-MS76_V1.jpg'
     }
   ],
@@ -59,6 +59,18 @@ export function inventoryReducer(state = initialState, action) {
       return {
         ...state,
         searchVal: action.value
+      };
+    case SORT_BY:
+      const { value } = action;
+
+      return {
+        ...state,
+        inventoryItems: [
+          ...state.inventoryItems.sort((a, b) => {
+            console.log(a[value], b[value]);
+            return b[value] < a[value] ? 0 : a ? -1 : 1;
+          })
+        ]
       };
     default:
       return state;
