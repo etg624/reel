@@ -52,7 +52,10 @@ class SearchableInventory extends Component {
         <section className="reels">
           <header className="reels-header">
             <h1>Your Reels!</h1>
-            <SortBy sortValues={{ ...this.props }} />
+            <SortBy
+              className="sort-by"
+              sortValues={['status', 'name', 'percentSaved', 'total']}
+            />
           </header>
 
           <ul>
@@ -60,7 +63,7 @@ class SearchableInventory extends Component {
               filteredItems
             ) : (
               <div className="no-item">
-                No Items Match that search{' '}
+                No items match that search{' '}
                 <span role="img" aria-label="detective">
                   🕵️‍♂️
                 </span>

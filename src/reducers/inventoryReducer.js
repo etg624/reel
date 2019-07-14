@@ -17,7 +17,7 @@ const initialState = {
       percentSaved: '90',
       total: 400,
       imageUrl:
-        'https://cache.net-a-porter.com/images/products/741153/741153_in_pp.jpg'
+        'https://cdn.cliqueinc.com/cache/posts/254060/how-to-tell-if-a-gucci-belt-is-real-254060-1523045002688-product.700x0c.jpg'
     },
     {
       id: 3,
@@ -67,7 +67,6 @@ export function inventoryReducer(state = initialState, action) {
         ...state,
         inventoryItems: [
           ...state.inventoryItems.sort((a, b) => {
-            console.log(a[value], b[value]);
             return b[value] < a[value] ? 0 : a ? -1 : 1;
           })
         ]

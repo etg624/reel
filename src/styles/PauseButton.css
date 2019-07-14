@@ -36,3 +36,25 @@
 .pause-button:active {
   transform: translateY(4px);
 }
+
+@media (max-width: 600px) {
+  .pause-button {
+    font-size: 8px;
+    width: 150px;
+
+    padding: 5px 10px;
+  }
+  .pause-button::before {
+    transform: translate(1, 1);
+  }
+  .pause-button::after {
+    transform: translate(-1, -1);
+  }
+}
+
+@media (min-width: 319px) and (max-width: 400px) {
+  .pause-button {
+    font-size: 7px;
+    padding: 7px 14px;
+  }
+}

@@ -32,15 +32,63 @@
   display: flex;
   margin: 0 0 25px 0px;
   border-bottom: 1px solid black;
+  justify-content: space-between;
 }
 
 .reels-header h1 {
   font-size: 25px;
   padding-bottom: 5px;
   margin-left: 18px;
+  width: 50%;
+  margin-top: auto;
 }
 
 .no-item {
   text-align: center;
   font-size: 40px;
+}
+
+@media (max-width: 600px) {
+  .search {
+    width: 80%;
+  }
+  .search:focus {
+    width: 90%;
+  }
+  .reels-header {
+    flex-direction: column;
+  }
+  .sort-buttons {
+    margin: auto;
+  }
+  .sort-by-text {
+    display: none;
+  }
+}
+
+@media (max-width: 890px) and (min-width: 320px) {
+  .reels-header {
+    justify-content: normal;
+  }
+
+  .reels {
+    width: 90%;
+  }
+  .sort-container {
+    width: 70%;
+  }
+}
+
+@media (max-width: 750px) {
+  .reels-header {
+    flex: none;
+  }
+
+  .reels-header h1 {
+    align-self: flex-start;
+  }
+  .sort-container {
+    width: 100%;
+    font-size: 13px;
+  }
 }

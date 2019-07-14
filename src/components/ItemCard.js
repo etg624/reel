@@ -11,13 +11,13 @@ function ItemCard(props) {
   const { name, status, percentSaved, total, imageUrl, id } = props;
   return (
     <main className="item-container">
-      <section className="item-image">
+      <section className="item-image-container">
         <img src={imageUrl} alt={name} />
       </section>
       <section className="item-info">
         <p className="bold name">{name}</p>
         <p className="total-price">Total price: ${total}</p>
-        <p>
+        <p className="item-owe">
           You only owe{' '}
           <span className="bold">${percentHandler(total, percentSaved)}</span>{' '}
           more!
