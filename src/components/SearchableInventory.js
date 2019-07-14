@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ItemCard from './ItemCard';
 import { search } from '../actions';
 import SortBy from './SortBy';
+import SearchBar from './SearchBar';
 import '../styles/SearchableInventory.css';
 
 class SearchableInventory extends Component {
@@ -42,13 +43,7 @@ class SearchableInventory extends Component {
       });
     return (
       <section className="page-content">
-        <input
-          className="search"
-          type="text"
-          value={searchVal}
-          onChange={this.onChangeHandler}
-          placeholder="Search for an item..."
-        />
+        <SearchBar onChange={this.onChangeHandler} searchVal={searchVal} />
         <section className="reels">
           <header className="reels-header">
             <h1>Your Reels!</h1>

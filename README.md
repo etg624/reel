@@ -1,9 +1,1 @@
-Todo
-
-### Components
-
-- table component that holds all the inventoryItems
-- inventoryItem that has a progress bar
-- progress bar component
-- search component
-- pause button component
+Thank you again for this opportunity to apply to reel. This little app is built in react and uses redux for state management. It has multiple components
