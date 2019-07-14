@@ -12,7 +12,8 @@
 
 .item-container:hover {
   transition: ease-in 0.1s;
-  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 7px 14px rgba(94, 60, 140, 0.25),
+    0 2px 2px rgba(94, 60, 140, 0.1);
 }
 
 .item-image-container {
@@ -47,11 +48,11 @@
 
 .active {
   color: rgb(255, 255, 255);
-  background-color: #080808;
+  background-color: rgba(94, 60, 140, 0.8);
 }
 
 .paused {
-  background-color: #d43a13;
+  background-color: rgba(212, 58, 19, 0.9);
   color: rgb(241, 232, 227);
 }
 
@@ -64,7 +65,7 @@
 }
 
 .item-status {
-  padding: 0.5em 0.5em;
+  padding: 0.3em;
   width: 40%;
   text-align: center;
   border-radius: 4px;
