@@ -4,7 +4,7 @@
 
 This little app is built in react and uses redux for state management.
 
-- To get up and running run `npm install` in your terminal and `npm start` to run the app in localhost.
+- To get up and running run clone this repo and cd into the project directory. When in the directory run `npm install` in your terminal and `npm start` to run the app in localhost.
 
 I started building this app by planning out my component structure. My main concern with the component structure was to keep things modularized and separate concerns for future testing and reusability. I made a point to include redux for every state change.
 
